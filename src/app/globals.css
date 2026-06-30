@@ -1,0 +1,282 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #10b981;
+  --accent: #f59e0b;
+  --danger: #ef4444;
+  --dark: #1f2937;
+  --light: #f9fafb;
+  --sidebar-width: 280px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  direction: rtl;
+  background: #f3f4f6;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e5e7eb;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* Custom Components */
+.card {
+  @apply bg-white rounded-xl shadow-sm border border-gray-100 p-6;
+}
+
+.card-header {
+  @apply flex items-center justify-between mb-4 pb-4 border-b border-gray-100;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 inline-flex items-center gap-2;
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800;
+}
+
+.btn-secondary {
+  @apply bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-300;
+}
+
+.btn-success {
+  @apply bg-emerald-600 text-white hover:bg-emerald-700 active:bg-emerald-800;
+}
+
+.btn-danger {
+  @apply bg-red-600 text-white hover:bg-red-700 active:bg-red-800;
+}
+
+.btn-warning {
+  @apply bg-amber-500 text-white hover:bg-amber-600 active:bg-amber-700;
+}
+
+.input {
+  @apply w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all;
+}
+
+.input:focus {
+  @apply border-blue-500;
+}
+
+.label {
+  @apply block text-sm font-medium text-gray-700 mb-1.5;
+}
+
+.select {
+  @apply w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all bg-white;
+}
+
+.textarea {
+  @apply w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all resize-y min-h-[120px];
+}
+
+/* Status Badges */
+.badge {
+  @apply px-2.5 py-1 rounded-full text-xs font-medium;
+}
+
+.badge-success {
+  @apply bg-emerald-100 text-emerald-700;
+}
+
+.badge-warning {
+  @apply bg-amber-100 text-amber-700;
+}
+
+.badge-danger {
+  @apply bg-red-100 text-red-700;
+}
+
+.badge-info {
+  @apply bg-blue-100 text-blue-700;
+}
+
+.badge-gray {
+  @apply bg-gray-100 text-gray-700;
+}
+
+/* Table Styling */
+.table-container {
+  @apply overflow-x-auto rounded-lg border border-gray-200;
+}
+
+.table {
+  @apply w-full text-sm;
+}
+
+.table th {
+  @apply bg-gray-50 px-4 py-3 text-right font-semibold text-gray-700 border-b border-gray-200;
+}
+
+.table td {
+  @apply px-4 py-3 border-b border-gray-100;
+}
+
+.table tr:hover td {
+  @apply bg-gray-50;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+  @apply fixed top-0 right-0 h-full w-72 bg-gray-900 text-white overflow-y-auto z-50;
+}
+
+.sidebar-link {
+  @apply flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-gray-800 hover:text-white transition-colors rounded-lg mx-2;
+}
+
+.sidebar-link.active {
+  @apply bg-blue-600 text-white;
+}
+
+/* Main Content */
+.main-content {
+  @apply mr-72 p-6 min-h-screen;
+}
+
+/* Stats Cards */
+.stat-card {
+  @apply bg-white rounded-xl shadow-sm p-6 border border-gray-100;
+}
+
+.stat-value {
+  @apply text-3xl font-bold text-gray-900;
+}
+
+.stat-label {
+  @apply text-sm text-gray-500 mt-1;
+}
+
+/* Loading Animation */
+.loading-spinner {
+  @apply w-8 h-8 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin;
+}
+
+/* Modal */
+.modal-overlay {
+  @apply fixed inset-0 bg-black/50 flex items-center justify-center z-50;
+}
+
+.modal {
+  @apply bg-white rounded-2xl shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto;
+}
+
+.modal-header {
+  @apply px-6 py-4 border-b border-gray-100 flex items-center justify-between;
+}
+
+.modal-body {
+  @apply px-6 py-4;
+}
+
+.modal-footer {
+  @apply px-6 py-4 border-t border-gray-100 flex items-center justify-end gap-3;
+}
+
+/* Toast Notifications */
+.toast {
+  @apply fixed bottom-4 left-4 px-6 py-3 rounded-lg shadow-lg text-white z-50 animate-pulse;
+}
+
+.toast-success {
+  @apply bg-emerald-600;
+}
+
+.toast-error {
+  @apply bg-red-600;
+}
+
+/* Progress Bar */
+.progress-bar {
+  @apply h-2 bg-gray-200 rounded-full overflow-hidden;
+}
+
+.progress-fill {
+  @apply h-full bg-blue-600 transition-all duration-300;
+}
+
+/* Tabs */
+.tabs {
+  @apply flex gap-1 border-b border-gray-200 mb-6;
+}
+
+.tab {
+  @apply px-4 py-2.5 text-gray-600 hover:text-gray-900 border-b-2 border-transparent transition-colors;
+}
+
+.tab.active {
+  @apply text-blue-600 border-blue-600;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Code Block */
+.code-block {
+  @apply bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto;
+}
+
+/* Toggle Switch */
+.toggle {
+  @apply relative inline-flex h-6 w-11 items-center rounded-full cursor-pointer transition-colors;
+}
+
+.toggle-active {
+  @apply bg-blue-600;
+}
+
+.toggle-inactive {
+  @apply bg-gray-300;
+}
+
+.toggle-dot {
+  @apply absolute h-4 w-4 rounded-full bg-white transition-transform;
+}
+
+.toggle-active .toggle-dot {
+  @apply translate-x-6;
+}
+
+.toggle-inactive .toggle-dot {
+  @apply translate-x-1;
+}
